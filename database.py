@@ -5,7 +5,7 @@ def connect_to_mysql():
         # Establish a connection to the MySQL server
         host = 'localhost'
         username = 'root'
-        password = 'root'
+        password = '12345'
         database = 'Assignment'
         connection = mysql.connector.connect(
             host=host,
@@ -24,6 +24,7 @@ def connect_to_mysql():
     except mysql.connector.Error as error:
         print("Error connecting to MySQL database:", error)
         return None
+
 
 connect_to_mysql()
 
