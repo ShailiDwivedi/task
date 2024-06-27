@@ -1,4 +1,4 @@
-import mysql.connector
+import mysql.connector as my_conn
 
 def connect_to_mysql():
     try:
@@ -7,24 +7,20 @@ def connect_to_mysql():
         username = 'root'
         password = '12345'
         database = 'Assignment'
-        connection = mysql.connector.connect(
-            host=host,
-            user=username,
-            password=password,
-            database=database
+        mydb = my_conn.connect(
+            host= host,
+            user= username,
+            password= password,
+            database= database
         )
         
-        if connection.is_connected():
+        if mydb.is_connected():
             print("Connected to MySQL database")
-            return connection
+            return mydb
         else:
             print("Failed to connect to MySQL database")
             return None
         
-    except mysql.connector.Error as error:
+    except my_conn.Error as error:
         print("Error connecting to MySQL database:", error)
         return None
-
-
-connect_to_mysql()
-

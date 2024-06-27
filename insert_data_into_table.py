@@ -1,5 +1,6 @@
 from database import connect_to_mysql as conn
 import mysql.connector
+
 connection = conn()
 mycursor = connection.cursor()
 

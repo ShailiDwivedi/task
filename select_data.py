@@ -5,6 +5,6 @@ mycursor = connection.cursor()
 
 def check_data(sql):
     mycursor.execute(sql)
-    tables = mycursor.fetchall()
-    return tables
+    rows = mycursor.fetchall()
+    return rows
 
